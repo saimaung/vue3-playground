@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue 3 - Watchers</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <button @click="getTaco()">
+                Click me to order a taco
+            </button>
+            <h2 v-if="!orderStatus">Where is my taco...</h2>
+            <h2 v-else>🌮!</h2>
+            <p v-if="orderSubmitted"> Your order is {{ orderStatus }}</p>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

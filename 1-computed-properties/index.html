@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed Properties</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="contain">
+            <h2>Blog Posts</h2>
+
+            <div class="new">
+                <h3>Add a New Post</h3>
+                <form @submit.prevent="addPost()">
+                    <input v-model="newTitle" placeholder="title" required />
+                    <input v-model="newAuthor" placeholder="author name" required />
+                    <select v-model="newLabel" required>
+                        <option disabled value="">Add a New label</option>
+                        <option>science</option>
+                        <option>math</option>
+                        <option>poetry</option>
+                        <option>history</option>
+                    </select>
+                    <button type="submit">Add New Blog Post</button>
+                </form>
+            </div>
+
+            <select v-model="selected">
+                <option disabled value="">Filter with a label</option>
+                <option>science</option>
+                <option>math</option>
+                <option>poetry</option>
+                <option>history</option>
+            </select>
+
+            <div v-for="post in filteredByLabel" :key="post.title" class="post">
+                <span class="label">{{ post.label }}</span>
+                <p>{{ post.title }}</p>
+                <small>{{ post.author }}</small>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

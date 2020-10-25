@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Vue 3 Components</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Your Upcoming Destinations</h2>
+            <destination v-for="location in locations" :location=location>
+                <img :src=location.img width="235" height="300" />
+            </destination>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
